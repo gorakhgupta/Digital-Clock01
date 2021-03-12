@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"> 
+<div class="container">
+    <h1>DigiTal Clock by <b>@Gorakh</b> </h1>
+    <br><br>
+    <h4 style="color:rgb(64, 190, 39)" >Current Time is :</h4>
+    <i><h1 style="color:blueviolet" id="time"></h1></i>
+
+</div>
+
+    </div>
+   
+ 
+
+    <script>
+        console.log('61 Wall Clock');
+        let tm=document.getElementById('time');
+        function gettime(){
+        let time=new Date();
+        let tt="";
+        let hr=time.getHours();
+        if(hr<9)
+        tt+="0";
+        if(hr>12)
+        hr=24-hr;
+        tt+=hr;
+        tt+=" : "
+        let mn=time.getMinutes();
+        if(mn<9)
+        tt+="0";
+        tt+=mn;
+        tt+=" : "
+        let sec=time.getSeconds();
+        if(sec<9)
+        tt+="0";
+        tt+=sec;
+        if(hr<12)
+        tt+=" AM ";
+        else 
+        tt+= " PM ";
+        
+
+        tm.innerHTML=tt;
+     //  document.write(time);
+        }
+        //Settimeout given time out k hisab se chal ke ruk jata hai
+        //SetInterval given time t k liye har t k bad run karta hai 
+       gettime();
+setInterval(() => {
+    gettime();
+    reload();
+    
+}, 1000);
+
+    </script>
+</body>
+
+</html>
